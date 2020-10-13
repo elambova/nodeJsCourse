@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, './static')));
 app.use(async (req, res, next) => {
   try {
     const names = await speakersService.getNames();
-    res.locals.speakerName = names;
+    res.locals.speakerNames = names;
     return next();
   } catch (err) {
     return next(err);
